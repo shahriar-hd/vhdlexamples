@@ -1,0 +1,46 @@
+-- Author Shahriar
+-- Date May 19 2024
+-- ALU
+
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.NUMERIC_STD.ALL;
+
+ENTITY ALUPort IS
+	PORT(
+	a, b : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+ 	s : IN STD_LOGIC_VECTOR (3 DOWNTO 0);
+	r : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
+	z : OUT STD_LOGIC
+	);
+END ALUPort;
+
+ARCHITECTURE ALU OF ALUPort IS
+SIGNAL f : STD_LOGIC_VECTOR (7 DOWNTO 0);
+BEGIN
+	PROCESS(a, b, s)
+	BEGIN
+	CASE s IS
+		WHEN "0000" => f <= a AND B;
+		WHEN "0001" => f <= a OR B;
+		WHEN "0010" => f <= a XOR B;
+		WHEN "0011" => f <= a NOR B;
+		WHEN "0100" => f <= NOT a;
+		WHEN "0101" => f <= a NAND B;
+		WHEN "0110" => f <= '0' & a(7 DOWNTO 1);
+		WHEN "0111" => f <= a(6 DOWNTO 0) & '0';
+		WHEN "1000" => f <= STD_LOGIC_VECTOR(UNSIGNED(a) + UNSIGNED(B));
+		WHEN "1001" => f <= STD_LOGIC_VECTOR(UNSIGNED(a) - UNSIGNED(B));
+		WHEN "1010" => f <= STD_LOGIC_VECTOR(UNSIGNED(a) + "00000001");
+		WHEN "1011" => f <= STD_LOGIC_VECTOR(UNSIGNED(a) - "00000001");
+		WHEN "1100" => IF UNSIGNED(a) < UNSIGNED(b) THEN
+					f <= "11111111";
+					ELSE
+					f <= "00000000";
+					END IF;
+		WHEN OTHERS => f <= "11111111";
+	END CASE;
+	END PROCESS;
+	r <= f;
+	z <= '1' WHEN f = "00000000" ELSE '0';
+END ALU;
