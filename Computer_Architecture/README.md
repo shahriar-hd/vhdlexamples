@@ -20,7 +20,7 @@ This repository contains VHDL code for various digital logic circuits commonly e
     - Qnot: The complement of Q.
     - Reset, when active low (Reset = 0), sets the flip-flop's output (Q) to 0, regardless of the clock or data input.
   - Circuit diagram reference: <br/>
-  ![Circuit diagram refrence]([https://www.hackatronic.com/wp-content/uploads/2024/04/D-Flip-Flop-Truth-Table-and-Circuit-Diagram-1-1-1210x615.webp])
+    [![Jmz2r8b.md.webp](https://iili.io/Jmz2r8b.md.webp)](https://freeimage.host/i/Jmz2r8b)
 
 
 ## 8-Bit Arithmetic Logic Unit (File 4: `file4.vhd`)
