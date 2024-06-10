@@ -31,21 +31,21 @@ This repository contains VHDL code for various digital logic circuits commonly e
     - First 8 number for Logical operation.
     - Second 8 number for Arithmetic operation (12-15 not used).
 
-    | Control Input | Function             |
-    | -------------- | ------------------- |
-    | 0000           | A AND B              |
-    | 0001           | A OR B               |
-    | 0010           | A XOR B              |
-    | 0011           | A NOR B              |
-    | 0100           | NOT A                |
-    | 0101           | A NAND B             |
-    | 0110           | Shift Right A         |
-    | 0111           | Shift Left A          |
-    | 1000           | A + B (addition)       |
-    | 1001           | A - B (subtraction)    |
-    | 1010           | Increment A (A + 1)   |
-    | 1011           | Decrement A (A - 1)   |
-    | 1100           | A less than B (F = 1 if A < B, F = 0 otherwise
+    | Control Input | Function             | Name
+    | -------------- | ------------------- | ---------- |
+    | 0000           | A AND B              | AND |
+    | 0001           | A OR B               | OR |
+    | 0010           | A XOR B              | XOR |
+    | 0011           | A NOR B              | NOR |
+    | 0100           | NOT A                | NOT |
+    | 0101           | A NAND B             | NAND |
+    | 0110           | Shift Right A         | SHR |
+    | 0111           | Shift Left A          | SHL |
+    | 1000           | A + B (addition)       | ADD |
+    | 1001           | A - B (subtraction)    | SUB |
+    | 1010           | Increment A (A + 1)   | INC |
+    | 1011           | Decrement A (A - 1)   | DEC |
+    | 1100           | A less than B (F = 1 if A < B, F = 0 otherwise | SLT
 
 ## Installation
 
